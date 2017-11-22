@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="600">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <Button Name="btnRightMid" Grid.Column="2" Grid.Row="1" >
+            <Image Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        </Button>
+        <Button Name="btnTopMid"  Grid.Column="1" Grid.Row="0" >
+            <Image   Grid.Column="1" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        </Button>
+        <Button Name="btnTopRight"  Grid.Column="2" Grid.Row="0" >
+            <Image   Grid.Column="2" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        </Button>
+        <Button Name="btnTopLeft"  Grid.Column="0" Grid.Row="0" Click="btnTopLeft_Click" >
+            <Image Name="imgTopLeft"  Grid.Column="0" Grid.Row="0" Source="x.jpg" Stretch="Fill" Visibility="Hidden"/>
+        </Button>
+        <Button Name="btnMidMid"  Grid.Column="1" Grid.Row="1" >
+            <Image Grid.Column="1" Grid.Row="1" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        </Button>
+        <Button Name="btnBotRight"  Grid.Column="2" Grid.Row="2"  >
+            <Image  Grid.Column="2" Grid.Row="2" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        </Button>
+
     </Grid>
 </Window>

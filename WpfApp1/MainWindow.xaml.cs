@@ -24,5 +24,29 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        
+        private void btnRightMid_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnTopLeft_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            if (imgTopLeft.Visibility==Visibility.Hidden)
+            {
+                imgTopLeft.Visibility = Visibility.Visible;
+            }
+            else
+            {  
+                imgTopLeft.Visibility = Visibility.Hidden;
+            }
+            
+ 
+
+            
+        }
     }
 }
