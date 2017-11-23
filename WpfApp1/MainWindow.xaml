@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600">
+        Title="Boter-kaas-en-eieren" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -18,24 +18,46 @@
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
-        <Button Name="btnRightMid" Grid.Column="2" Grid.Row="1" >
-            <Image Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Button Name="btnRightMid" Grid.Column="2" Grid.Row="1" Click="btnRightMid_Click_1" >
+            <Image Name="imgRightMid" Grid.Column="2" Grid.Row="1" Source="x.jpg" Stretch="Fill" Visibility="Hidden"/>
         </Button>
-        <Button Name="btnTopMid"  Grid.Column="1" Grid.Row="0" >
-            <Image   Grid.Column="1" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Image Name="imgRightMid2" Grid.Column="2" Grid.Row="1" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Button Name="btnTopMid"  Grid.Column="1" Grid.Row="0" Click="btnTopMid_Click" >
+            <Image Name="imgTopMid"  Grid.Column="1" Grid.Row="0" Source="x.jpg" Stretch="Fill" Visibility="Hidden"/>
         </Button>
-        <Button Name="btnTopRight"  Grid.Column="2" Grid.Row="0" >
-            <Image   Grid.Column="2" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Image Name="imgTopMid2"  Grid.Column="1" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Button Name="btnTopRight"  Grid.Column="2" Grid.Row="0" Click="btnTopRight_Click" >
+            <Image Name="imgTopRight"   Grid.Column="2" Grid.Row="0" Source="x.jpg" Stretch="Fill" Visibility="Hidden"/>
         </Button>
+        <Image Name="imgTopRight2"   Grid.Column="2" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
         <Button Name="btnTopLeft"  Grid.Column="0" Grid.Row="0" Click="btnTopLeft_Click" >
             <Image Name="imgTopLeft"  Grid.Column="0" Grid.Row="0" Source="x.jpg" Stretch="Fill" Visibility="Hidden"/>
         </Button>
-        <Button Name="btnMidMid"  Grid.Column="1" Grid.Row="1" >
-            <Image Grid.Column="1" Grid.Row="1" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Image Name="imgTopLeft2"  Grid.Column="0" Grid.Row="0" Source="circle.jpg" Stretch="Fill" Visibility="Hidden"/>
+        <Button Name="btnMidMid"  Grid.Column="1" Grid.Row="1" Click="btnMidMid_Click" >
+            <Image Name="imgMidMid" Grid.Column="1" Grid.Row="1" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
         </Button>
-        <Button Name="btnBotRight"  Grid.Column="2" Grid.Row="2"  >
-            <Image  Grid.Column="2" Grid.Row="2" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Image Name="imgMidMid2" Grid.Column="1" Grid.Row="1" Source="circle.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Button Name="btnBotRight"  Grid.Column="2" Grid.Row="2" Click="btnBotRight_Click"  >
+            <Image Name="imgbotRight"  Grid.Column="2" Grid.Row="2" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
         </Button>
-
+        <Image Name="imgbotRight2"  Grid.Column="2" Grid.Row="2" Source="circle.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Button Name="btnLeftMid"  Grid.Column="0" Grid.Row="1" Click="btnLeftMid_Click"  >
+            <Image Name="imgLeftMid"  Grid.Column="0" Grid.Row="1" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        </Button>
+        <Image Name="imgLeftMid2"  Grid.Column="0" Grid.Row="1" Source="circle.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Button Name="btnBotLeft"  Grid.Column="0" Grid.Row="2" Click="btnBotLeft_Click"  >
+            <Image Name="imgBotLeft"  Grid.Column="0" Grid.Row="2" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        </Button>
+        <Image Name="imgBotLeft2"  Grid.Column="0" Grid.Row="2" Source="circle.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Button Name="btnBotMid"  Grid.Column="1" Grid.Row="2" Click="btnBotMid_Click"  >
+            <Image Name="imgBotMid"  Grid.Column="1" Grid.Row="2" Source="x.jpg" Stretch="Fill" Visibility="Hidden" />
+        </Button>
+        <Image Name="imgBotMid2"  Grid.Column="1" Grid.Row="2" Source="circle.jpg" Stretch="Fill" Visibility="Hidden" />
+        <Label Name="lblPlayer" Content="Player 1" Grid.Column="2" HorizontalAlignment="Left" Margin="227,36,-126,0" VerticalAlignment="Top" Width="100" FontSize="20" />
+        <Label Name="lblPlayer2" Content="Player 2" Grid.Column="2" HorizontalAlignment="Left" Margin="227,36,-126,0" VerticalAlignment="Top" Width="100" Visibility="Hidden"/>
+        <Label Name="lblWin" Content="You&#xD;&#xA;Won!" Grid.Column="2" HorizontalAlignment="Left" Margin="227,94,-126,0" Grid.Row="1" VerticalAlignment="Top" Width="100" FontSize="36" Height="106" Visibility="Hidden"/>
+        <Button Name="btnRestart" Content="Restart" Grid.Column="2" HorizontalAlignment="Left" Margin="251,30,-163,0" Grid.Row="1" VerticalAlignment="Top" Width="113" Height="40" Click="btnRestart_Click"/>
+        <Label Name="lblWin2" Content="AI&#xD;&#xA;Won!" Grid.Column="2" HorizontalAlignment="Left" Margin="227,94,-126,0" Grid.Row="1" VerticalAlignment="Top" Width="100" FontSize="36" Height="106" Visibility="Hidden"/>
     </Grid>
 </Window>
