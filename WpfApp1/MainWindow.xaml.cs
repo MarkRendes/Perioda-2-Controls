@@ -50,10 +50,6 @@ namespace WpfApp1
                 win();
                 a = false;
             }
-            else
-            {
-                
-            }
 
             if (a == true)
             {
@@ -88,10 +84,6 @@ namespace WpfApp1
                 win();
                 a = false;
             }
-            else
-            {
-
-            }
 
             if (a == true)
             {
@@ -123,10 +115,6 @@ namespace WpfApp1
                 AI();
                 win();
                 a = false;
-            }
-            else
-            {
-
             }
 
             if (a == true)
@@ -162,10 +150,6 @@ namespace WpfApp1
                 win();
                 a = false;
             }
-            else
-            {
-
-            }
 
             if (a == true)
             {
@@ -198,10 +182,6 @@ namespace WpfApp1
                 AI();
                 win();
                 a = false;
-            }
-            else
-            {
-
             }
 
             if (a == true)
@@ -236,10 +216,6 @@ namespace WpfApp1
                 win();
                 a = false;
             }
-            else
-            {
-
-            }
 
             if (a == true)
             {
@@ -272,10 +248,6 @@ namespace WpfApp1
                 AI();
                 win();
                 a = false;
-            }
-            else
-            {
-
             }
 
             if (a == true)
@@ -310,10 +282,6 @@ namespace WpfApp1
                 win();
                 a = false;
             }
-            else
-            {
-
-            }
 
             if (a == true)
             {
@@ -345,10 +313,6 @@ namespace WpfApp1
                 AI();
                 win();
                 a = false;
-            }
-            else
-            {
-
             }
 
             if (a == true)
