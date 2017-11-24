@@ -94,16 +94,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="circle.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="x.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Images\circle.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="tic tac toe.png" />
+    <Content Include="Images\tic tac toe.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\x.jpg">
