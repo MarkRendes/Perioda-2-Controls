@@ -103,6 +103,7 @@
     <Content Include="Images\circle.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="tic tac toe.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\x.jpg">

@@ -666,12 +666,16 @@ namespace WpfApp1
             {
                 btnAI.Background = Brushes.Red;
                 mode = false;
+                lblWin.Content = "Player 1 won!";
+                lblWin2.Content = "Player 2 won!";
                 lblPlayer.Content = "Player 1";
             }
             else if (mode == false)
             {
                 btnAI.Background = Brushes.Green;
                 mode = true;
+                lblWin.Content = "You won!";
+                lblWin2.Content = "AI won!";
                 lblPlayer.Content = "Player VS AI";
             }
             
