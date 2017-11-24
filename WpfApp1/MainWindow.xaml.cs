@@ -27,7 +27,7 @@ namespace WpfApp1
         }
 
         public static bool a = true;
-        public static int getal=1;
+        public static bool mode = true;
 
 
 
@@ -38,17 +38,26 @@ namespace WpfApp1
             {
                 btnTopLeft.IsEnabled = false;
                 imgTopLeft.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
+
+               
             }
             else if (a == false)
             {
                 btnTopLeft.IsEnabled = false;
                 imgTopLeft2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -72,17 +81,24 @@ namespace WpfApp1
             {
                 btnTopMid.IsEnabled = false;
                 imgTopMid.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnTopMid.IsEnabled = false;
                 imgTopMid2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -104,17 +120,24 @@ namespace WpfApp1
             {
                 btnTopRight.IsEnabled = false;
                 imgTopRight.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnTopRight.IsEnabled = false;
                 imgTopRight2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -138,17 +161,24 @@ namespace WpfApp1
             {
                 btnRightMid.IsEnabled = false;
                 imgRightMid.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnRightMid.IsEnabled = false;
                 imgRightMid2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -171,17 +201,24 @@ namespace WpfApp1
             {
                 btnMidMid.IsEnabled = false;
                 imgMidMid.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnMidMid.IsEnabled = false;
                 imgMidMid2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -204,17 +241,24 @@ namespace WpfApp1
             {
                 btnBotRight.IsEnabled = false;
                 imgbotRight.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnBotRight.IsEnabled = false;
                 imgbotRight2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -237,17 +281,24 @@ namespace WpfApp1
             {
                 btnLeftMid.IsEnabled = false;
                 imgLeftMid.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnLeftMid.IsEnabled = false;
                 imgLeftMid2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -270,17 +321,24 @@ namespace WpfApp1
             {
                 btnBotLeft.IsEnabled = false;
                 imgBotLeft.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a = true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnBotLeft.IsEnabled = false;
                 imgBotLeft2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -302,17 +360,24 @@ namespace WpfApp1
             {
                 btnBotMid.IsEnabled = false;
                 imgBotMid.Visibility = Visibility.Visible;
-                AI();
-                win();
-                a =true;
+                if (mode == true)
+                {
+                    AI();
+                    win();
+                    a = true;
+                }
+                else
+                {
+                    win();
+                    a = false;
+                }
             }
             else if (a == false)
             {
                 btnBotMid.IsEnabled = false;
                 imgBotMid2.Visibility = Visibility.Visible;
-                AI();
                 win();
-                a = false;
+                a = true;
             }
 
             if (a == true)
@@ -593,6 +658,23 @@ namespace WpfApp1
         {
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
+        }
+
+        private void bntAI_Click(object sender, RoutedEventArgs e)
+        {
+            if (mode == true)
+            {
+                btnAI.Background = Brushes.Red;
+                mode = false;
+                lblPlayer.Content = "Player 1";
+            }
+            else if (mode == false)
+            {
+                btnAI.Background = Brushes.Green;
+                mode = true;
+                lblPlayer.Content = "Player VS AI";
+            }
+            
         }
     }
 }
