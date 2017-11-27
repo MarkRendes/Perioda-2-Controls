@@ -56,8 +56,8 @@
             <Image Name="imgBotMid"  Grid.Column="1" Grid.Row="2" Source="/images/x.jpg" Stretch="Fill" Visibility="Hidden" />
         </Button>
         <Image Name="imgBotMid2"  Grid.Column="1" Grid.Row="2" Source="/images/circle.jpg" Stretch="Fill" Visibility="Hidden" />
-        <Label Name="lblPlayer" Content="Player VS AI" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="200" FontSize="20" Background="Red" />
-        <Label Name="lblPlayer2" Content="Player 2" Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" Width="200" FontSize="20" Background="Red" Visibility="Hidden"/>
+        <Label Name="lblPlayer" Content="Player VS AI" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="200" FontSize="20" Background="BlueViolet" />
+        <Label Name="lblPlayer2" Content="Player 2" Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" Width="200" FontSize="20" Background="BlueViolet" Visibility="Hidden"/>
         <Label Name="lblWin" Content="You Won!" Grid.Column="4"   Grid.Row="1" VerticalAlignment="Bottom" Width="200" FontSize="28" Height="100" Visibility="Hidden">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="10"/>
@@ -69,7 +69,10 @@
                 <DropShadowEffect ShadowDepth="10"/>
             </Label.Effect>
         </Label>
-        <Button Name="btnAI" Content="AI" Grid.Column="4" Grid.Row="0" VerticalAlignment="Bottom" Width="200" Height="100" Click="bntAI_Click" Background="Green" BorderBrush="#FF290F0F" />
+        <Button Name="btnAI" Content="AI" Grid.Column="4" Grid.Row="0" VerticalAlignment="Bottom" Width="200" Height="60" Click="bntAI_Click" Background="Green" BorderBrush="#FF290F0F" />
         <Image Grid.Column="4"  Grid.Row="2"  Source="/images/tic tac toe.png" Stretch="Fill"/>
+        <Button Name="btnAI2" Grid.Row="0" Grid.Column="3" Content="HARD AI" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="200" Background="Red" Margin="0,80,0,0" Click="btnAI2_Click"/>
+        <Button Name="btnPlayer" Content="Player vs Player" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50" Width="200" Background="Red" Margin="0,37,0,0" Click="btnPlayer_Click"/>
+
     </Grid>
 </Window>

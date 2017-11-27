@@ -28,11 +28,13 @@ namespace WpfApp1
 
         public static bool a = true;
         public static bool mode = true;
-
+        public static bool mode2 = false;
+        public static bool mode3 = false;
 
 
         private void btnTopLeft_Click(object sender, RoutedEventArgs e)
-        {
+        { 
+            
             
             if (a==true)
             {
@@ -40,7 +42,15 @@ namespace WpfApp1
                 imgTopLeft.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -83,7 +93,15 @@ namespace WpfApp1
                 imgTopMid.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -122,7 +140,15 @@ namespace WpfApp1
                 imgTopRight.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -163,7 +189,15 @@ namespace WpfApp1
                 imgRightMid.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -203,7 +237,15 @@ namespace WpfApp1
                 imgMidMid.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -243,7 +285,15 @@ namespace WpfApp1
                 imgbotRight.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -283,7 +333,15 @@ namespace WpfApp1
                 imgLeftMid.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -323,7 +381,15 @@ namespace WpfApp1
                 imgBotLeft.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -362,7 +428,15 @@ namespace WpfApp1
                 imgBotMid.Visibility = Visibility.Visible;
                 if (mode == true)
                 {
+                    win();
                     AI();
+                    win();
+                    a = true;
+                }
+                else if (mode2 == true)
+                {
+                    win();
+                    AI3();
                     win();
                     a = true;
                 }
@@ -479,6 +553,11 @@ namespace WpfApp1
             {
                 lblWin2.Visibility = Visibility.Visible;
                 win = true;
+            }
+            else if (btnTopLeft.IsEnabled == false && btnTopMid.IsEnabled == false && btnTopRight.IsEnabled == false && btnRightMid.IsEnabled == false && btnMidMid.IsEnabled == false && btnLeftMid.IsEnabled == false && btnBotLeft.IsEnabled == false && btnBotMid.IsEnabled == false && btnBotRight.IsEnabled == false)
+            {
+                lblWin.Content = "Draw";
+                lblWin.Visibility = Visibility.Visible;
             }
             else
             {
@@ -660,11 +739,296 @@ namespace WpfApp1
             Application.Current.Shutdown();
         }
 
+        
+
+        private void AI2()
+        {
+            // Left/Mid
+            if (imgTopLeft.Visibility == Visibility.Visible && imgTopMid.Visibility == Visibility.Visible && btnTopRight.IsEnabled) 
+            {
+                btnTopRight.IsEnabled = false;
+                imgTopRight2.Visibility = Visibility.Visible;
+            }
+            else if (imgLeftMid.Visibility == Visibility.Visible && imgMidMid.Visibility == Visibility.Visible && btnRightMid.IsEnabled) 
+            {
+                btnRightMid.IsEnabled = false;
+                imgRightMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft.Visibility == Visibility.Visible && imgBotMid.Visibility == Visibility.Visible && btnBotRight.IsEnabled) 
+            {
+                btnBotRight.IsEnabled = false;
+                imgbotRight2.Visibility = Visibility.Visible;
+            }
+            // Mid/Right
+            else if (imgTopMid.Visibility == Visibility.Visible && imgTopRight.Visibility == Visibility.Visible && btnTopLeft.IsEnabled) 
+            {
+                btnTopLeft.IsEnabled = false;
+                imgTopLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgMidMid.Visibility == Visibility.Visible && imgRightMid.Visibility == Visibility.Visible && btnLeftMid.IsEnabled) 
+            {
+                btnLeftMid.IsEnabled = false;
+                imgLeftMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotMid.Visibility == Visibility.Visible && imgbotRight.Visibility == Visibility.Visible && btnBotLeft.IsEnabled)
+            {
+                btnBotLeft.IsEnabled = false;
+                imgBotLeft2.Visibility = Visibility.Visible;
+            }
+            // Mid/Bot
+            else if (imgLeftMid.Visibility==Visibility.Visible && imgBotLeft.Visibility==Visibility.Visible && btnTopLeft.IsEnabled)
+            {
+                btnTopLeft.IsEnabled = false;
+                imgTopLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgMidMid.Visibility==Visibility.Visible && imgBotMid.Visibility==Visibility.Visible && btnTopMid.IsEnabled)
+            {
+                btnTopMid.IsEnabled = false;
+                imgTopMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgRightMid.Visibility==Visibility.Visible && imgbotRight.Visibility==Visibility.Visible && btnTopRight.IsEnabled)
+            {
+                btnTopRight.IsEnabled = false;
+                imgTopRight2.Visibility = Visibility.Visible;
+            }
+            // Column
+            else if (imgTopLeft.Visibility == Visibility.Visible && imgLeftMid.Visibility == Visibility.Visible && btnBotLeft.IsEnabled)
+            {
+                btnBotLeft.IsEnabled = false;
+                imgBotLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopMid.Visibility == Visibility.Visible && imgMidMid.Visibility == Visibility.Visible && btnBotMid.IsEnabled)
+            {
+                btnBotMid.IsEnabled = false;
+                imgBotMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopRight.Visibility == Visibility.Visible && imgRightMid.Visibility == Visibility.Visible && btnBotRight.IsEnabled)
+            {
+                btnBotRight.IsEnabled = false;
+                imgbotRight2.Visibility = Visibility.Visible;
+            }
+            // Middle column
+            else if (imgTopLeft.Visibility == Visibility.Visible && imgTopRight.Visibility == Visibility.Visible && btnTopMid.IsEnabled)
+            {
+                btnTopMid.IsEnabled = false;
+                imgTopMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgLeftMid.Visibility==Visibility.Visible && imgRightMid.Visibility==Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgMidMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft.Visibility==Visibility.Visible && imgbotRight.Visibility==Visibility.Visible && btnBotMid.IsEnabled)
+            {
+                btnBotMid.IsEnabled = false;
+                imgBotMid2.Visibility = Visibility.Visible;
+            }
+            // Middle row
+            else if (imgTopLeft.Visibility==Visibility.Visible && imgBotLeft.Visibility==Visibility.Visible && btnLeftMid.IsEnabled)
+            {
+                btnLeftMid.IsEnabled = false;
+                imgLeftMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopMid.Visibility==Visibility.Visible && imgBotMid.Visibility==Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgMidMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopRight.Visibility==Visibility.Visible && imgbotRight.Visibility==Visibility.Visible && btnRightMid.IsEnabled)
+            {
+                btnRightMid.IsEnabled = false;
+                imgRightMid2.Visibility = Visibility.Visible;
+            }
+            // Cross middle
+            else if (imgTopLeft.Visibility==Visibility.Visible && imgbotRight.Visibility==Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgMidMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft.Visibility==Visibility.Visible && imgTopRight.Visibility==Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgBotMid2.Visibility = Visibility.Visible;
+            }
+            // Cross end
+            else if (imgTopLeft.Visibility==Visibility.Visible && imgMidMid.Visibility==Visibility.Visible && btnBotRight.IsEnabled)
+            {
+                btnBotRight.IsEnabled = false;
+                imgbotRight2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft.Visibility==Visibility.Visible && imgMidMid.Visibility==Visibility.Visible && btnTopRight.IsEnabled)
+            {
+                btnTopRight.IsEnabled = false;
+                imgTopRight2.Visibility = Visibility.Visible;
+            }
+            // Cross end 2
+            else if (imgTopRight.Visibility==Visibility.Visible && imgMidMid.Visibility==Visibility.Visible && btnBotLeft.IsEnabled)
+            {
+                btnBotLeft.IsEnabled = false;
+                imgBotLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgbotRight.Visibility==Visibility.Visible && imgMidMid.Visibility==Visibility.Visible && btnTopLeft.IsEnabled)
+            {
+                btnTopLeft.IsEnabled = false;
+                imgTopLeft2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AI();
+            }
+        }
+        private void AI3()
+        {
+            // Left/Mid
+            if (imgTopLeft2.Visibility == Visibility.Visible && imgTopMid2.Visibility == Visibility.Visible && btnTopRight.IsEnabled)
+            {
+                btnTopRight.IsEnabled = false;
+                imgTopRight2.Visibility = Visibility.Visible;
+            }
+            else if (imgLeftMid2.Visibility == Visibility.Visible && imgMidMid2.Visibility == Visibility.Visible && btnRightMid.IsEnabled)
+            {
+                btnRightMid.IsEnabled = false;
+                imgRightMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft2.Visibility == Visibility.Visible && imgBotMid2.Visibility == Visibility.Visible && btnBotRight.IsEnabled)
+            {
+                btnBotRight.IsEnabled = false;
+                imgbotRight2.Visibility = Visibility.Visible;
+            }
+            // Mid/Right
+            else if (imgTopMid2.Visibility == Visibility.Visible && imgTopRight2.Visibility == Visibility.Visible && btnTopLeft.IsEnabled)
+            {
+                btnTopLeft.IsEnabled = false;
+                imgTopLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgMidMid2.Visibility == Visibility.Visible && imgRightMid2.Visibility == Visibility.Visible && btnLeftMid.IsEnabled)
+            {
+                btnLeftMid.IsEnabled = false;
+                imgLeftMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotMid2.Visibility == Visibility.Visible && imgbotRight2.Visibility == Visibility.Visible && btnBotLeft.IsEnabled)
+            {
+                btnBotLeft.IsEnabled = false;
+                imgBotLeft2.Visibility = Visibility.Visible;
+            }
+            // Mid/Bot
+            else if (imgLeftMid2.Visibility == Visibility.Visible && imgBotLeft2.Visibility == Visibility.Visible && btnTopLeft.IsEnabled)
+            {
+                btnTopLeft.IsEnabled = false;
+                imgTopLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgMidMid2.Visibility == Visibility.Visible && imgBotMid2.Visibility == Visibility.Visible && btnTopMid.IsEnabled)
+            {
+                btnTopMid.IsEnabled = false;
+                imgTopMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgRightMid2.Visibility == Visibility.Visible && imgbotRight2.Visibility == Visibility.Visible && btnTopRight.IsEnabled)
+            {
+                btnTopRight.IsEnabled = false;
+                imgTopRight2.Visibility = Visibility.Visible;
+            }
+            // Column
+            else if (imgTopLeft2.Visibility == Visibility.Visible && imgLeftMid2.Visibility == Visibility.Visible && btnBotLeft.IsEnabled)
+            {
+                btnBotLeft.IsEnabled = false;
+                imgBotLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopMid2.Visibility == Visibility.Visible && imgMidMid2.Visibility == Visibility.Visible && btnBotMid.IsEnabled)
+            {
+                btnBotMid.IsEnabled = false;
+                imgBotMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopRight2.Visibility == Visibility.Visible && imgRightMid2.Visibility == Visibility.Visible && btnBotRight.IsEnabled)
+            {
+                btnBotRight.IsEnabled = false;
+                imgbotRight2.Visibility = Visibility.Visible;
+            }
+            // Middle column
+            else if (imgTopLeft2.Visibility == Visibility.Visible && imgTopRight2.Visibility == Visibility.Visible && btnTopMid.IsEnabled)
+            {
+                btnTopMid.IsEnabled = false;
+                imgTopMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgLeftMid2.Visibility == Visibility.Visible && imgRightMid2.Visibility == Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgMidMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft2.Visibility == Visibility.Visible && imgbotRight2.Visibility == Visibility.Visible && btnBotMid.IsEnabled)
+            {
+                btnBotMid.IsEnabled = false;
+                imgBotMid2.Visibility = Visibility.Visible;
+            }
+            // Middle row
+            else if (imgTopLeft2.Visibility == Visibility.Visible && imgBotLeft2.Visibility == Visibility.Visible && btnLeftMid.IsEnabled)
+            {
+                btnLeftMid.IsEnabled = false;
+                imgLeftMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopMid2.Visibility == Visibility.Visible && imgBotMid2.Visibility == Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgMidMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgTopRight2.Visibility == Visibility.Visible && imgbotRight2.Visibility == Visibility.Visible && btnRightMid.IsEnabled)
+            {
+                btnRightMid.IsEnabled = false;
+                imgRightMid2.Visibility = Visibility.Visible;
+            }
+            // Cross middle
+            else if (imgTopLeft2.Visibility == Visibility.Visible && imgbotRight2.Visibility == Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgMidMid2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft2.Visibility == Visibility.Visible && imgTopRight2.Visibility == Visibility.Visible && btnMidMid.IsEnabled)
+            {
+                btnMidMid.IsEnabled = false;
+                imgBotMid2.Visibility = Visibility.Visible;
+            }
+            // Cross end
+            else if (imgTopLeft2.Visibility == Visibility.Visible && imgMidMid2.Visibility == Visibility.Visible && btnBotRight.IsEnabled)
+            {
+                btnBotRight.IsEnabled = false;
+                imgbotRight2.Visibility = Visibility.Visible;
+            }
+            else if (imgBotLeft2.Visibility == Visibility.Visible && imgMidMid2.Visibility == Visibility.Visible && btnTopRight.IsEnabled)
+            {
+                btnTopRight.IsEnabled = false;
+                imgTopRight2.Visibility = Visibility.Visible;
+            }
+            // Cross end 2
+            else if (imgTopRight2.Visibility == Visibility.Visible && imgMidMid2.Visibility == Visibility.Visible && btnBotLeft.IsEnabled)
+            {
+                btnBotLeft.IsEnabled = false;
+                imgBotLeft2.Visibility = Visibility.Visible;
+            }
+            else if (imgbotRight2.Visibility == Visibility.Visible && imgMidMid2.Visibility == Visibility.Visible && btnTopLeft.IsEnabled)
+            {
+                btnTopLeft.IsEnabled = false;
+                imgTopLeft2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AI2();
+            }
+        }
+
         private void bntAI_Click(object sender, RoutedEventArgs e)
         {
             if (mode == true)
             {
                 btnAI.Background = Brushes.Red;
+                btnAI2.Background = Brushes.Red;
+                if (btnPlayer.Background == Brushes.Red)
+                {
+                    btnPlayer.Background = Brushes.Green;
+                }
+                else if (btnPlayer.Background == Brushes.Green)
+                {
+                    btnPlayer.Background = Brushes.Red;
+                }
+                mode3 = true;
                 mode = false;
                 lblWin.Content = "Player 1 won!";
                 lblWin2.Content = "Player 2 won!";
@@ -673,12 +1037,75 @@ namespace WpfApp1
             else if (mode == false)
             {
                 btnAI.Background = Brushes.Green;
+                btnAI2.Background = Brushes.Red;
+                if (btnPlayer.Background == Brushes.Red)
+                {
+                    btnPlayer.Background = Brushes.Green;
+                }
+                else if (btnPlayer.Background == Brushes.Green)
+                {
+                    btnPlayer.Background = Brushes.Red;
+                }
+                mode3 = false;
                 mode = true;
                 lblWin.Content = "You won!";
                 lblWin2.Content = "AI won!";
                 lblPlayer.Content = "Player VS AI";
             }
+
+        }
+
+        private void btnAI2_Click(object sender, RoutedEventArgs e)
+        {
             
+            if (mode2 == false)
+            {
+                mode2 = true;
+                mode3 = false;
+                mode = false;
+                btnAI.Background = Brushes.Red;
+                btnAI2.Background = Brushes.Green;
+                btnPlayer.Background = Brushes.Red;
+                lblPlayer.Content = "Player VS AI";
+            }
+            else if (mode2 == true)
+            {
+                mode2 = false;
+                mode3 = false;
+                mode = true;
+                btnAI.Background = Brushes.Green;
+                btnAI2.Background = Brushes.Red;
+                btnPlayer.Background = Brushes.Red;
+            }
+            
+        }
+
+        private void btnPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            if (mode3 == false)
+            {
+                mode3 = true;
+                mode2 = false;
+                mode = false; ;
+                btnAI.Background = Brushes.Red;
+                btnAI2.Background = Brushes.Red;
+                btnPlayer.Background = Brushes.Green;
+                lblPlayer.Content = "Player 1";
+                lblWin.Content = "Player 1 won!";
+                lblWin2.Content = "Player 2 won!";
+            }
+            else if (mode3 == true)
+            {
+                mode3 = false;
+                mode2 = false;
+                mode = true;
+                btnAI.Background = Brushes.Green;
+                btnAI2.Background = Brushes.Red;
+                btnPlayer.Background = Brushes.Red;
+                lblPlayer.Content = "Player VS AI";
+                lblWin.Content = "You won!";
+                lblWin2.Content = "AI won!";
+            }
         }
     }
 }
