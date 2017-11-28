@@ -30,6 +30,7 @@ namespace WpfApp1
         public static bool mode = true;
         public static bool mode2 = false;
         public static bool mode3 = false;
+        public static bool mode4 = false;
 
 
         private void btnTopLeft_Click(object sender, RoutedEventArgs e)
@@ -53,6 +54,10 @@ namespace WpfApp1
                     AI3();
                     win();
                     a = true;
+                }
+                else if (mode4 == true)
+                {
+                    AI3();
                 }
                 else
                 {
@@ -105,6 +110,10 @@ namespace WpfApp1
                     win();
                     a = true;
                 }
+                else if (mode4 == true)
+                {
+                    AI3();
+                }
                 else
                 {
                     win();
@@ -151,6 +160,10 @@ namespace WpfApp1
                     AI3();
                     win();
                     a = true;
+                }
+                else if (mode4 == true)
+                {
+                    AI3();
                 }
                 else
                 {
@@ -201,6 +214,10 @@ namespace WpfApp1
                     win();
                     a = true;
                 }
+                else if (mode4 == true)
+                {
+                    AI3();
+                }
                 else
                 {
                     win();
@@ -248,6 +265,10 @@ namespace WpfApp1
                     AI3();
                     win();
                     a = true;
+                }
+                else if (mode4 == true)
+                {
+                    AI3();
                 }
                 else
                 {
@@ -297,6 +318,10 @@ namespace WpfApp1
                     win();
                     a = true;
                 }
+                else if (mode4 == true)
+                {
+                    AI3();
+                }
                 else
                 {
                     win();
@@ -344,6 +369,10 @@ namespace WpfApp1
                     AI3();
                     win();
                     a = true;
+                }
+                else if (mode4 == true)
+                {
+                    AI3();
                 }
                 else
                 {
@@ -393,6 +422,10 @@ namespace WpfApp1
                     win();
                     a = true;
                 }
+                else if (mode4 == true)
+                {
+                    AI3();
+                }
                 else
                 {
                     win();
@@ -439,6 +472,10 @@ namespace WpfApp1
                     AI3();
                     win();
                     a = true;
+                }
+                else if (mode4 == true)
+                {
+                    AI3();
                 }
                 else
                 {
@@ -581,6 +618,7 @@ namespace WpfApp1
         private void AI()
 
         {
+            bool aiGetal = false;
             do
             {
                 Random rnd = new Random();
@@ -730,7 +768,7 @@ namespace WpfApp1
                 {
                     
                 }
-            } while (true);
+            } while (!aiGetal);
         }
 
         private void btnRestart_Click(object sender, RoutedEventArgs e)
@@ -872,6 +910,10 @@ namespace WpfApp1
                 btnTopLeft.IsEnabled = false;
                 imgTopLeft2.Visibility = Visibility.Visible;
             }
+            else if (btnTopLeft.IsEnabled == false && btnTopMid.IsEnabled == false && btnTopRight.IsEnabled == false && btnRightMid.IsEnabled == false && btnMidMid.IsEnabled == false && btnLeftMid.IsEnabled == false && btnBotLeft.IsEnabled == false && btnBotMid.IsEnabled == false && btnBotRight.IsEnabled == false)
+            {
+                return;
+            }
             else
             {
                 AI();
@@ -880,7 +922,14 @@ namespace WpfApp1
         private void AI3()
         {
             // Left/Mid
-            if (imgTopLeft2.Visibility == Visibility.Visible && imgTopMid2.Visibility == Visibility.Visible && btnTopRight.IsEnabled)
+            if (mode4 == true)
+            {
+                imgTopLeft2.Visibility = Visibility.Visible;
+                imgTopMid2.Visibility = Visibility.Visible;
+                imgTopRight2.Visibility = Visibility.Visible;
+                win();
+            }
+            else if (imgTopLeft2.Visibility == Visibility.Visible && imgTopMid2.Visibility == Visibility.Visible && btnTopRight.IsEnabled)
             {
                 btnTopRight.IsEnabled = false;
                 imgTopRight2.Visibility = Visibility.Visible;
@@ -1008,6 +1057,10 @@ namespace WpfApp1
                 btnTopLeft.IsEnabled = false;
                 imgTopLeft2.Visibility = Visibility.Visible;
             }
+            else if (btnTopLeft.IsEnabled == false && btnTopMid.IsEnabled == false && btnTopRight.IsEnabled == false && btnRightMid.IsEnabled == false && btnMidMid.IsEnabled == false && btnLeftMid.IsEnabled == false && btnBotLeft.IsEnabled == false && btnBotMid.IsEnabled == false && btnBotRight.IsEnabled == false)
+            {
+                return;
+            }
             else
             {
                 AI2();
@@ -1020,7 +1073,7 @@ namespace WpfApp1
             {
                 btnAI.Background = Brushes.Red;
                 btnAI2.Background = Brushes.Red;
-                if (btnPlayer.Background == Brushes.Red)
+                if (btnPlayer.Background == Brushes.Red && btnAI4.Background==Brushes.Red)
                 {
                     btnPlayer.Background = Brushes.Green;
                 }
@@ -1028,6 +1081,7 @@ namespace WpfApp1
                 {
                     btnPlayer.Background = Brushes.Red;
                 }
+                mode4 = false;
                 mode3 = true;
                 mode = false;
                 lblWin.Content = "Player 1 won!";
@@ -1036,16 +1090,17 @@ namespace WpfApp1
             }
             else if (mode == false)
             {
+                btnAI4.Background = Brushes.Red;
                 btnAI.Background = Brushes.Green;
                 btnAI2.Background = Brushes.Red;
-                if (btnPlayer.Background == Brushes.Red)
-                {
-                    btnPlayer.Background = Brushes.Green;
-                }
-                else if (btnPlayer.Background == Brushes.Green)
+
+                btnPlayer.Background = Brushes.Green;
+
+                if (btnPlayer.Background == Brushes.Green)
                 {
                     btnPlayer.Background = Brushes.Red;
                 }
+                mode4 = false;
                 mode3 = false;
                 mode = true;
                 lblWin.Content = "You won!";
@@ -1060,21 +1115,26 @@ namespace WpfApp1
             
             if (mode2 == false)
             {
+                mode4 = false;
                 mode2 = true;
                 mode3 = false;
                 mode = false;
                 btnAI.Background = Brushes.Red;
                 btnAI2.Background = Brushes.Green;
+                btnAI4.Background = Brushes.Red;
                 btnPlayer.Background = Brushes.Red;
                 lblPlayer.Content = "Player VS AI";
+                lblWin2.Content = "AI won!";
             }
             else if (mode2 == true)
             {
+                mode4 = false;
                 mode2 = false;
                 mode3 = false;
                 mode = true;
                 btnAI.Background = Brushes.Green;
                 btnAI2.Background = Brushes.Red;
+                btnAI4.Background = Brushes.Red;
                 btnPlayer.Background = Brushes.Red;
             }
             
@@ -1084,11 +1144,13 @@ namespace WpfApp1
         {
             if (mode3 == false)
             {
+                mode4 = false;
                 mode3 = true;
                 mode2 = false;
                 mode = false; ;
                 btnAI.Background = Brushes.Red;
                 btnAI2.Background = Brushes.Red;
+                btnAI4.Background = Brushes.Red;
                 btnPlayer.Background = Brushes.Green;
                 lblPlayer.Content = "Player 1";
                 lblWin.Content = "Player 1 won!";
@@ -1096,12 +1158,48 @@ namespace WpfApp1
             }
             else if (mode3 == true)
             {
+                mode4 = false;
                 mode3 = false;
                 mode2 = false;
                 mode = true;
                 btnAI.Background = Brushes.Green;
                 btnAI2.Background = Brushes.Red;
+                btnAI4.Background = Brushes.Red;
                 btnPlayer.Background = Brushes.Red;
+                lblPlayer.Content = "Player VS AI";
+                lblWin.Content = "You won!";
+                lblWin2.Content = "AI won!";
+            }
+        }
+
+        private void btnAI4_Click(object sender, RoutedEventArgs e)
+        {
+            if (mode4 == false)
+            {
+                mode4 = true;
+                mode3 = false;
+                mode2 = false;
+                mode = false;
+                btnAI.Background = Brushes.Red;
+                btnAI2.Background = Brushes.Red;
+                btnPlayer.Background = Brushes.Red;
+                btnAI4.Background = Brushes.Green;
+                lblPlayer.Content = "Player VS AI";
+                lblWin.Content = "You won!";
+                lblWin2.Content = "Told you...";
+            }
+            else if (mode4 == true)
+            {
+                mode4 = false;
+                mode3 = false;
+                mode2 = false;
+                mode = true;
+                btnMidMid.IsEnabled = true;
+                imgMidMid2.Visibility = Visibility.Hidden;
+                btnAI.Background = Brushes.Green;
+                btnAI2.Background = Brushes.Red;
+                btnPlayer.Background = Brushes.Red;
+                btnAI4.Background = Brushes.Red;
                 lblPlayer.Content = "Player VS AI";
                 lblWin.Content = "You won!";
                 lblWin2.Content = "AI won!";

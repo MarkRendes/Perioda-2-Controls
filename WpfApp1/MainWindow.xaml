@@ -63,7 +63,7 @@
                 <DropShadowEffect ShadowDepth="10"/>
             </Label.Effect>
         </Label>
-        <Button Name="btnRestart" Content="Restart" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="100"   Width="200"  Click="btnRestart_Click" Background="#FF36ADFF" BorderBrush="#FF0A0202"/>
+        <Button Name="btnRestart" Content="Restart" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50"   Width="200"  Click="btnRestart_Click" Background="#FF36ADFF" BorderBrush="#FF0A0202"/>
         <Label Name="lblWin2" Content="AI Won!" Grid.Column="3" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Bottom" Width="200" FontSize="28" Height="100" ScrollViewer.VerticalScrollBarVisibility="Hidden" Visibility="Hidden">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="10"/>
@@ -73,6 +73,6 @@
         <Image Grid.Column="4"  Grid.Row="2"  Source="/images/tic tac toe.png" Stretch="Fill"/>
         <Button Name="btnAI2" Grid.Row="0" Grid.Column="3" Content="HARD AI" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="200" Background="Red" Margin="0,80,0,0" Click="btnAI2_Click"/>
         <Button Name="btnPlayer" Content="Player vs Player" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="50" Width="200" Background="Red" Margin="0,37,0,0" Click="btnPlayer_Click"/>
-
+        <Button Name="btnAI4" Content="Unbeatable AI" Grid.Column="3" Grid.Row="1" Width="200" Height="50" Background="Red" Margin="0,50,0,100" Click="btnAI4_Click"/>
     </Grid>
 </Window>
